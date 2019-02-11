@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Lottery.css" />
+    <script src="~/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <form action="~/Home/Result" method="post" autocomplete="off">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">Bilibili评论抽奖系统<small>简易版</small></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="text-center">由于是简易版，所以只能抽取评论少于1000条（也就是评论不大于20页）的视频</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    <label>视频av号</label>
+                    <input type="number" class="form-control" id="avNum" name="avNum" value="1" min="1" max="999999999" />
+                </div>
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    <label>抽取人数</label>
+                    <input type="number" class="form-control" id="lotteryNum" name="lotteryNum" value="1" min="1" max="1000" />
+                </div>
+                <div class="col-lg-2 col-lg-offset-5 form-group">
+                    <input type="submit" class="form-control" id="submit" name="submit" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

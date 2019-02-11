@@ -1,0 +1,63 @@
+﻿@using BilibiliReplyLottery.Class;
+@{
+    Layout = null;
+    List<ReplyInfo> list = ViewBag.LuckyList;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Lottery.css" />
+    <script src="~/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Bilibili评论抽奖系统<small>简易版</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h4>抽奖结果：</h4><br />
+                <p>本次评论抽奖视频av号为：</p>@ViewBag.AvNum
+                <p>抽奖时总共有<span>@ViewBag.TotalNum</span>个评论在抽取列表中<p />
+                <p>总共要抽取<span>@ViewBag.LotteryNum</span>个人</p>
+                <p>以下是中奖人列表：</p>
+            </div>
+        </div>
+        @for (int count = 0; count < list.Count; count++)
+        {
+            string url = "http://space.bilibili.com/" + list[count].mid;
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3 border-style">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <a target="_blank" href="@url"><p>@list[count].uname</p></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>mid：@list[count].mid</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>楼层数：@list[count].floor</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>评论内容：@list[count].msg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+</html>
