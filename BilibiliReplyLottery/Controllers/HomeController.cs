@@ -36,24 +36,5 @@ namespace BilibiliReplyLottery.Controllers
             ViewBag.Title = "抽奖结果 -- Bilibili评论抽奖";
             return View();
         }
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
