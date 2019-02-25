@@ -34,7 +34,12 @@ namespace BilibiliReplyLottery.Controllers
             ViewBag.LotteryNum = lotteryNum;
             ViewBag.LuckyList = luckyList;
             ViewBag.Title = "抽奖结果 -- Bilibili评论抽奖";
+            Tools.count++;
             return View();
+        }
+        public JsonResult Count()
+        {
+            return Json(Tools.count, JsonRequestBehavior.AllowGet);
         }
     }
 }
