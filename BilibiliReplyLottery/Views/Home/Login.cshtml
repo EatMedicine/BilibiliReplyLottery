@@ -1,0 +1,51 @@
+﻿@model BilibiliReplyLottery.Models.LotteryAccount
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Lottery.css" />
+    <script src="~/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <form autocomplete="off" method="post" action="@Url.Action("Login","Home")">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">登录</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    @Html.TextBoxFor(x => x.LotteryName, new { @class="form-control",@placeholder="用户名"})
+                </div>
+                <div class="col-lg-3" style="color:rgb(212, 0, 0);font-size:12px">
+                    @Html.ValidationMessageFor(x => x.LotteryName) 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    @Html.TextBoxFor(x => x.LotteryPsw, new { @class = "form-control", @placeholder = "密码", @type = "password" })
+                </div>
+                <div class="col-lg-3" style="color:rgb(212, 0, 0);font-size:12px">
+                    @Html.ValidationMessageFor(x => x.LotteryPsw) 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5 form-group">
+                    <input type="submit" class="form-control" id="submit" name="submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

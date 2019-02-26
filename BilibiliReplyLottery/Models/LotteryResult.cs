@@ -16,8 +16,10 @@ namespace BilibiliReplyLottery.Models
     {
         public int ResultID { get; set; }
         public Nullable<int> LotteryId { get; set; }
-        public Nullable<int> mid { get; set; }
+        public string mid { get; set; }
         public Nullable<int> LotteryFloor { get; set; }
         public string Msg { get; set; }
+        public Nullable<System.DateTime> LotteryTime { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -18,5 +18,7 @@ namespace BilibiliReplyLottery.Models
         public string AvNum { get; set; }
         public Nullable<int> LotteryNum { get; set; }
         public Nullable<System.DateTime> LotteryTime { get; set; }
+        public Nullable<int> IsExecuted { get; set; }
+        public Nullable<int> IsFilter { get; set; }
     }
 }

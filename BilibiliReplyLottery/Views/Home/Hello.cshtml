@@ -1,0 +1,62 @@
+﻿@using BilibiliReplyLottery.Models;
+@{
+    Layout = null;
+    List<LotteryReady> readyList = ViewBag.ReadyData;
+    List<LotteryReady> resultList = ViewBag.ResultData;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Lottery.css" />
+    <script src="~/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Bilibili评论抽奖系统</h1>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="col-lg-1 col-lg-offset-4">传送门：</h3>
+        </div>
+        <div class=" row">
+            <div class="col-lg-1 col-lg-offset-4">
+                <a href="@Url.Action("Lottery")"><p class="text-center">即时抽奖</p></a>
+            </div>
+            <div class="col-lg-1 col-lg-offset-2">
+                <a href="@Url.Action("TimeLottery")"><p class="text-center">定时抽奖</p></a>
+            </div>
+        </div>
+        <br /><br />
+        <!--定时栏和公告栏-->
+        <div class="row">
+            <div class="col-lg-6">
+                <h4 class="text-center">定时抽奖任务公示栏</h4>
+                @foreach (LotteryReady ready in readyList)
+                {
+                    <div class="row">
+                        <p class="col-lg-4 col-lg-offset-1">AV号：@ready.AvNum</p>
+                        <p class="col-lg-2">抽奖人数：@ready.LotteryNum</p>
+                        <p class="col-lg-4">抽奖时间：@ready.LotteryTime.ToString()</p>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-6">
+                <h4 class="text-center">定时抽奖结果公示栏</h4>
+                @foreach (LotteryReady result in resultList)
+                {
+                    <div class="row">
+                        <a href="@Url.Action("TimeResult","Home",new { lotteryNum = result.LotteryId})"><p class="col-lg-4 col-lg-offset-1">AV号：@result.AvNum 抽奖结果</p></a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

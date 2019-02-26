@@ -27,5 +27,6 @@ namespace BilibiliReplyLottery.Models
     
         public virtual DbSet<LotteryReady> LotteryReady { get; set; }
         public virtual DbSet<LotteryResult> LotteryResult { get; set; }
+        public virtual DbSet<LotteryAccount> LotteryAccount { get; set; }
     }
 }

@@ -170,8 +170,12 @@
     <Compile Include="Class\ReplyInfo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Filter\LoginFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LotteryAccount.cs">
+      <DependentUpon>LotteryData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LotteryData.Context.cs">
       <AutoGen>True</AutoGen>
@@ -257,11 +261,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Lottery.cshtml" />
     <Content Include="Views\Home\Result.cshtml" />
+    <Content Include="Views\Home\Hello.cshtml" />
+    <Content Include="Views\Home\TimeLottery.cshtml" />
+    <Content Include="Views\Home\TimeResult.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Jump.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

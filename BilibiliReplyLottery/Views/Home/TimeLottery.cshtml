@@ -14,16 +14,11 @@
     <script src="~/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-    <form action="~/Home/Result" method="post" autocomplete="off">
+    <form action="" method="post" autocomplete="off">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="text-center">Bilibili评论抽奖系统<small>简易版</small></h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="text-center">由于是简易版，所以在抽取评论上限有一定限制（目前是 @ViewBag.MaxPageNum 页</h3>
+                    <h1 class="text-center">Bilibili定时抽奖系统</h1>
                 </div>
             </div>
             <div class="row">
@@ -35,11 +30,18 @@
                     <label>抽取人数</label>
                     <input type="number" class="form-control" id="lotteryNum" name="lotteryNum" value="1" min="1" max="1000" />
                 </div>
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    <label>开奖天数<small style="color:rgb(141, 141, 141)">设置为0则为即时开奖</small></label>
+                    <input type="number" class="form-control" id="lotteryDay" name="lotteryDay" value="0" min="0" max="30" />
+                </div>
+                <div class="col-lg-4 col-lg-offset-4 form-group">
+                    <label>是否开启刷楼筛选（即多次评论对中奖概率无影响）</label>
+                    <input type="checkbox" class="" id="lotteryCheck" name="lotteryCheck" value="open" />
+                </div>
                 <div class="col-lg-2 col-lg-offset-5 form-group">
                     <input type="submit" class="form-control" id="submit" name="submit" />
                 </div>
             </div>
-
         </div>
     </form>
 </body>
